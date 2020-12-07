@@ -1,50 +1,44 @@
-<?php 
+<?php
     // Headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
 
     include_once '../../config/Database.php';
-    include_once '../../models/Post.php';
+    include_once '../../Models/Order_contains.php';
 
-    // Instantiate DB & connect
+    // start db and connect
     $database = new Database();
     $db = $database->connect();
 
-    // Instantiate blog post object
-    $post = new Post($db);
+    // Instantiate Shopping_cart object
+    $Sc = new Order_contains($db);
 
-    // Blog post query
-    $result = $post->read();
-    // Get row count
+    // call the get method
+    $result = $Sc->Get();
+    // get num of rows
     $num = $result->rowCount();
 
-    // Check if any posts
-    if($num > 0) {
-        // Post array
-        $posts_arr = array();
-        // $posts_arr['data'] = array();
+    // check is any shopping_cart exist
+    if ($num >0){
+      $sc_arr = array();
+      $sc_arr['data'] = array();
 
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
+      while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+        extract($row);
 
-            $post_item = array(
-            'id' => $id,
-            'title' => $title,
-            'body' => html_entity_decode($body),
-            'author' => $author,
-            'category_id' => $category_id,
-            'category_name' => $category_name
-            );
+        $sc_item = array(
+          'Order_Id' => $Order_Id,
+          'Art_Id' => $Art_Id,
+          'Amount' => $Amount,
+        );
 
-            // Push to "data"
-            array_push($posts_arr, $post_item);
-            // array_push($posts_arr['data'], $post_item);
-        }
-
-        // Turn to JSON & output
-        echo json_encode($posts_arr);
-
-    } else {
-        // No Posts
-        echo json_encode(array('message' => 'No Posts Found'));
-  }
+        //push to "data"
+        array_push($sc_arr['data'],$sc_item);
+      }
+      //turn to Json
+      echo json_encode($sc_arr);
+    }else{
+      // no shopping carts
+      echo json_encode(array('message' => 'No Order found'));
+    }
+ ?>

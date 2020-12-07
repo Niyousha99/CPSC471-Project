@@ -1,12 +1,13 @@
 <?php 
   class Database {
+    // DB Params
     private $host = 'localhost';
-    private $db_name = ''; // need to set DB name
+    private $db_name = 'storedatabase';
     private $username = 'root';
-    private $password = ''; // need to set password
+    private $password = '';
     private $conn;
 
-    // Connect to db
+    // DB Connect
     public function connect() {
       $this->conn = null;
 
