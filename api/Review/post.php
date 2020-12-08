@@ -6,26 +6,29 @@
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type,    Access-Control-Allow-Methods, Authorization,X-Requested-With');
   
     include_once '../../config/Database.php';
-    include_once '../../models/Order_contains.php';
+    include_once '../../models/Review.php';
 
     // start db and connect
     $database = new Database();
     $db = $database->connect();
 
-    // Instantiate Shopping_cart object
-    $Sc = new Order_contains($db);
+    // Instantiate Review object
+    $Sc = new Review($db);
 
     // get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    $Sc->Order_Id = $data->Order_Id;
     $Sc->Art_Id = $data->Art_Id;
-    $Sc->Art_qty = $data->Art_qty;
+    $Sc->Customer_Id = $data->Customer_Id;
+    $Sc->Cname = $data->Cname;
+    $Sc->Review = $data->Review;
+    $Sc->Date_ = $data->Date_;
+    $Sc->Rating = $data->Rating;
 
     if ($Sc->Post()){
-      echo json_encode(array('message' => 'Order made'));
+      echo json_encode(array('message' => 'Review posted'));
     }else {
-      echo json_encode(array('message' => 'Order not made'));
+      echo json_encode(array('message' => 'Review not posted'));
     }
 
 ?>

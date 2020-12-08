@@ -2,32 +2,29 @@
     // Headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
-    header('Access-Control-Allow-Methods: POST');
+    header('Access-Control-Allow-Methods: DELETE');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type,   Access-Control-Allow-Methods, Authorization,X-Requested-With');
-
+  
     include_once '../../config/Database.php';
-    include_once '../../models/Shipment.php';
+    include_once '../../models/Review.php';
 
     // start db and connect
     $database = new Database();
     $db = $database->connect();
 
-    // Instantiate Shopping_cart object
-    $Sc = new Shipment($db);
+    // Instantiate Review object
+    $Sc = new Review($db);
 
     // get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    $Sc->Order_Id = $data->Order_Id;
-    $Sc->Status_ = $data->Status_;
-    $Sc->Scompany = $data->Scompany;
-    $Sc->Ship_date = $data->Ship_date;
-    $Sc->Destination = $data->Destination;
+    $Sc->Art_Id = $data->Art_Id;
+    $Sc->Customer_Id = $data->Customer_Id;
 
-    if ($Sc->Post()){
-      echo json_encode(array('message' => 'Shipment made'));
+    if ($Sc->Delete()){
+      echo json_encode(array('message' => 'Review Deleted'));
     }else {
-      echo json_encode(array('message' => 'Shipment not made'));
+      echo json_encode(array('message' => 'Review not Deleted'));
     }
 
 ?>

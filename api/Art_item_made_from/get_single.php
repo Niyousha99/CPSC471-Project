@@ -4,34 +4,35 @@
     header('Content-Type: application/json');
 
     include_once '../../config/Database.php';
-    include_once '../../Models/Orders.php';
+    include_once '../../Models/Art_item_made_from.php';
 
     // start db and connect
     $database = new Database();
     $db = $database->connect();
 
-    // Instantiate Shopping_cart object
-    $Sc = new Orders($db);
+    // Instantiate Art_item_made_from object
+    $Sc = new Art_item_made_from($db);
 
     // get id from URL
-    $Sc->Order_Id = isset($_GET['Order_Id']) ? $_GET['Order_Id'] : die();
+    $Sc->Art_Id = isset($_GET['Art_Id']) ? $_GET['Art_Id'] : die();
 
-    // Get order
+        // Get order
     $result = $Sc->Get_single();
   
     // Get row count
     $num = $result->rowCount();
 
-    // Check if any Order
+    // Check if any Art_item_made_from
     if($num > 0) {
       $arr = array();
       while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
         $item = array(
-          'Order_Id' => $Order_Id,
-          'Customer_Id' => $Customer_Id,
-          'Final_cost' => $Final_cost
+          'Art_Id' => $Art_Id,
+          'Mat_Id' => $Mat_Id,
+          'Mat_name' => $Mat_name,
+          'M_qty_each_item' => $M_qty_each_item
         );
 
         // Push to "data"
@@ -42,8 +43,8 @@
       echo json_encode($arr);
   
     } else {
-      // No Order
+      // No Shopping_cart
       echo json_encode(
-        array('message' => 'No Order Found')
+        array('message' => 'No Art_item_made_from Found')
       );
     }

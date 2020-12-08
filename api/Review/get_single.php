@@ -4,17 +4,17 @@
     header('Content-Type: application/json');
 
     include_once '../../config/Database.php';
-    include_once '../../Models/Orders.php';
+    include_once '../../Models/Review.php';
 
     // start db and connect
     $database = new Database();
     $db = $database->connect();
 
-    // Instantiate Shopping_cart object
-    $Sc = new Orders($db);
+    // Instantiate Review object
+    $Sc = new Review($db);
 
     // get id from URL
-    $Sc->Order_Id = isset($_GET['Order_Id']) ? $_GET['Order_Id'] : die();
+    $Sc->Art_Id = isset($_GET['Art_Id']) ? $_GET['Art_Id'] : die();
 
     // Get order
     $result = $Sc->Get_single();
@@ -22,16 +22,20 @@
     // Get row count
     $num = $result->rowCount();
 
-    // Check if any Order
+    // Check if any Review
     if($num > 0) {
       $arr = array();
       while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
         $item = array(
-          'Order_Id' => $Order_Id,
+          'Art_Id' => $Art_Id,
+          'Art_name' => $Art_name,
           'Customer_Id' => $Customer_Id,
-          'Final_cost' => $Final_cost
+          'Cname' => $Cname,
+          'Review' => $Review,
+          'Date_' => $Date_,
+          'Rating' => $Rating
         );
 
         // Push to "data"
@@ -42,8 +46,8 @@
       echo json_encode($arr);
   
     } else {
-      // No Order
+      // No Shopping_cart
       echo json_encode(
-        array('message' => 'No Order Found')
+        array('message' => 'No Review Found')
       );
     }

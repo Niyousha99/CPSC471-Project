@@ -4,21 +4,22 @@
     header('Content-Type: application/json');
 
     include_once '../../config/Database.php';
-    include_once '../../Models/Art_item.php';
+    include_once '../../Models/Review.php';
 
     // start db and connect
     $database = new Database();
     $db = $database->connect();
 
-    // Instantiate Art_item object
-    $Sc = new Art_item($db);
+    // Instantiate Review object
+    $Sc = new Review($db);
 
     // call the get method
     $result = $Sc->Get();
+
     // get num of rows
     $num = $result->rowCount();
 
-    // check is any Art_item exist
+    // check is any Reviews exist
     if ($num >0){
       $sc_arr = array();
       while ($row = $result->fetch(PDO::FETCH_ASSOC)){
@@ -27,9 +28,11 @@
         $sc_item = array(
           'Art_Id' => $Art_Id,
           'Art_name' => $Art_name,
-          'Quantity' => $Quantity,
-          'Price' => $Price,
-          'Type_' => $Type_
+          'Customer_Id' => $Customer_Id,
+          'Cname' => $Cname,
+          'Review' => $Review,
+          'Date_' => $Date_,
+          'Rating' => $Rating
         );
 
         //push to "data"
@@ -38,7 +41,7 @@
       //turn to Json
       echo json_encode($sc_arr);
     }else{
-      // no Art_item
-      echo json_encode(array('message' => 'No Art_item found'));
+      // no shopping carts
+      echo json_encode(array('message' => 'No Reviews found'));
     }
  ?>

@@ -1,12 +1,12 @@
 <?php
-  class shopping_cart_contains{
+  class Art_item_made_from{
       // DB connections
       private $conn;
-      private $table = 'shopping_cart_contains';
+      private $table = 'art_item_made_from';
 
-      public $Customer_Id;
       public $Art_Id;
-      public $Art_qty;
+      public $Mat_Id;
+      public $M_qty_each_item;
 
       // constructor with DB
       public function __construct($db){
@@ -16,13 +16,13 @@
       // Get Shopping_cart
       public function Get(){
         // Create query
-        $query = 'SELECT C.Customer_Id, C.Art_Id, I.Art_name, C.Art_qty
-                  FROM ' . $this->table . ' AS C 
-                  LEFT JOIN art_item AS I ON C.Art_Id = I.Art_Id
-                  ORDER BY C.Customer_Id';
+        $query = 'SELECT F.Art_Id, F.Mat_Id, M.Mat_name, F.M_qty_each_item
+                  FROM ' . $this->table . ' AS F 
+                  LEFT JOIN material AS M ON F.Mat_Id = M.Mat_Id
+                  ORDER BY F.Art_Id';
 
         $stmt = $this->conn->prepare($query);
-        
+
         $stmt->execute();
 
         return $stmt;
@@ -30,36 +30,39 @@
 
       // get single shopping cart
       public function Get_single(){
-        $query = 'SELECT C.Customer_Id, C.Art_Id, I.Art_name, C.Art_qty
-                  FROM ' . $this->table . ' AS C 
-                  LEFT JOIN art_item AS I ON C.Art_Id = I.Art_Id
-                  WHERE Customer_Id = ?';
+        // Create query
+        $query = 'SELECT F.Art_Id, F.Mat_Id, M.Mat_name, F.M_qty_each_item
+                  FROM ' . $this->table . ' AS F 
+                  LEFT JOIN material AS M ON F.Mat_Id = M.Mat_Id
+                  WHERE F.Art_Id = :Art_Id';
 
         $stmt = $this->conn->prepare($query);
 
-        $stmt->bindParam(1, $this->Customer_Id);
+        $stmt->bindParam(':Art_Id', $this->Art_Id);
 
         $stmt->execute();
-        
+
         return $stmt;
       }
 
       public function Post(){
         $query = 'INSERT INTO ' .$this->table . '
-                  SET Customer_Id = :Customer_Id, Art_Id = :Art_Id, Art_qty = :Art_qty';
+        SET Mat_Id = :Mat_Id,
+            Art_Id = :Art_Id,
+            M_qty_each_item = :M_qty_each_item';
 
         // prepare Statement
         $stmt = $this->conn->prepare($query);
 
         //clean Data
-        $this->Customer_Id = htmlspecialchars(strip_tags($this->Customer_Id));
+        $this->Mat_Id = htmlspecialchars(strip_tags($this->Mat_Id));
         $this->Art_Id = htmlspecialchars(strip_tags($this->Art_Id));
-        $this->Art_qty = htmlspecialchars(strip_tags($this->Art_qty));
+        $this->M_qty_each_item = htmlspecialchars(strip_tags($this->M_qty_each_item));
 
         //bind the data
-        $stmt->bindParam(':Customer_Id', $this->Customer_Id);
+        $stmt->bindParam(':Mat_Id', $this->Mat_Id);
         $stmt->bindParam(':Art_Id', $this->Art_Id);
-        $stmt->bindParam(':Art_qty', $this->Art_qty);
+        $stmt->bindParam(':M_qty_each_item', $this->M_qty_each_item);
 
         // execute
         if ($stmt->execute()){
@@ -67,26 +70,27 @@
         }
 
         printf("Error: %s.\n", $stmt->error);
+
         return false;
       }
 
       public function Put(){
         $query = 'UPDATE ' .$this->table . '
-        SET Art_qty = :Art_qty
-        WHERE Customer_Id = :Customer_Id AND Art_Id =  :Art_Id';
+        SET M_qty_each_item = :M_qty_each_item
+        WHERE Mat_Id = :Mat_Id AND Art_Id =  :Art_Id';
 
         // prepare Statement
         $stmt = $this->conn->prepare($query);
 
         //clean Data
-        $this->Customer_Id = htmlspecialchars(strip_tags($this->Customer_Id));
+        $this->Mat_Id = htmlspecialchars(strip_tags($this->Mat_Id));
         $this->Art_Id = htmlspecialchars(strip_tags($this->Art_Id));
-        $this->Art_qty = htmlspecialchars(strip_tags($this->Art_qty));
+        $this->M_qty_each_item = htmlspecialchars(strip_tags($this->M_qty_each_item));
 
         //bind the data
-        $stmt->bindParam(':Customer_Id', $this->Customer_Id);
+        $stmt->bindParam(':Mat_Id', $this->Mat_Id);
         $stmt->bindParam(':Art_Id', $this->Art_Id);
-        $stmt->bindParam(':Art_qty', $this->Art_qty);
+        $stmt->bindParam(':M_qty_each_item', $this->M_qty_each_item);
 
         // execute
         if ($stmt->execute()){
@@ -94,20 +98,23 @@
         }
 
         printf("Error: %s.\n", $stmt->error);
+
         return false;
       }
 
       public function Delete(){
         $query = 'DELETE FROM ' . $this->table . ' 
-                  WHERE Customer_Id = :Customer_Id  AND Art_Id =  :Art_Id';
+                  WHERE Mat_Id = :Mat_Id AND Art_Id = :Art_Id';
 
         // prepare Statement
         $stmt = $this->conn->prepare($query);
+
         //clean data
-        $this->Customer_Id = htmlspecialchars(strip_tags($this->Customer_Id));
+        $this->Mat_Id = htmlspecialchars(strip_tags($this->Mat_Id));
         $this->Art_Id = htmlspecialchars(strip_tags($this->Art_Id));
+
         // bind data
-        $stmt->bindParam(':Customer_Id', $this->Customer_Id);
+        $stmt->bindParam(':Mat_Id', $this->Mat_Id);
         $stmt->bindParam(':Art_Id', $this->Art_Id);
 
         // execute
