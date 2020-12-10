@@ -1,0 +1,2022 @@
+{
+	"info": {
+		"_postman_id": "99e8c150-1e85-43c9-81c3-4d202674ba88",
+		"name": "Online-Art-Gallery-API",
+		"description": "# Introduction\nThis API is for an online art gallery accessed by admins and customers.\n\n# Overview\n An admin may manage their inventory of art items, place material\norders from suppliers, and view a summary of customer orders and\nreviews. Customers may add art items to their virtual shopping carts to\nbe purchased later, check the shipment status of their orders, and\nwrite reviews for their received items.\n\n\n\n\n\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GET Admins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin",
+								"get.php"
+							]
+						},
+						"description": "View all admins of the database management system."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Admin Material Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin_material_order/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin_material_order",
+								"get.php"
+							]
+						},
+						"description": "View material orders of all admins."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Art Items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "none"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item",
+								"get.php"
+							]
+						},
+						"description": "View all art items."
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "none"
+								},
+								"url": {
+									"raw": "https://localhost/Online-Store-API/api/Art-item/get.php",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"Online-Store-API",
+										"api",
+										"Art-item",
+										"get.php"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "GET Art Item Made From",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item_made_from/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item_made_from",
+								"get.php"
+							]
+						},
+						"description": "Gets all the materials for all art items."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Customer/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Customer",
+								"get.php"
+							]
+						},
+						"description": "Get all customers."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Manage Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/manage_inventory/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"manage_inventory",
+								"get.php"
+							]
+						},
+						"description": "Get inventories managed by all admins"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/material/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"material",
+								"get.php"
+							]
+						},
+						"description": "Gets all materials in inventory for crafting art items."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Orders/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Orders",
+								"get.php"
+							]
+						},
+						"description": "Gets all customer orders."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Order Contains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Order_contains/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Order_contains",
+								"get.php"
+							]
+						},
+						"description": "Gets all art items in all customer orders."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Review/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Review",
+								"get.php"
+							]
+						},
+						"description": "Gets all reviews written by customers for their art item purchases."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Shipment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shipment/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shipment",
+								"get.php"
+							]
+						},
+						"description": "Gets all shipments for all customer orders."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Shopping Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart",
+								"get.php"
+							]
+						},
+						"description": "Gets all current shopping carts of online customers."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Shopping Cart Contains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart_contains/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart_contains",
+								"get.php"
+							]
+						},
+						"description": "Gets all current shopping carts and their contents for each\r\nonline customer."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Supply Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/supply_order/get.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"supply_order",
+								"get.php"
+							]
+						},
+						"description": "Gets all supply orders of admins from suppliers."
+					},
+					"response": []
+				}
+			],
+			"description": "All GET requests for each API endpoint in the ViVi Art Gallery DBMS. Each request returns all tuples in a particular relation.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1c60796e-426b-4ed7-8ed1-1b629c49764f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "869a8e21-379a-4f6a-aadb-d74e8ef33ea3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GET_SINGLE",
+			"item": [
+				{
+					"name": "Get Single Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin/get_single.php?Username=Niyousha",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "Niyousha"
+								}
+							]
+						},
+						"description": "Gets a particular admin specified by username."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Admin Material Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin_material_order/get_single.php?SO_Id=11",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin_material_order",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "SO_Id",
+									"value": "11"
+								}
+							]
+						},
+						"description": "Gets admin material order specified by Supply Order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Art Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item/get_single.php?Art_Id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Art_Id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Gets single art item specified by art ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Art Item Made From",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item_made_from/get_single.php?Art_Id=8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item_made_from",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Art_Id",
+									"value": "8"
+								}
+							]
+						},
+						"description": "Gets materials used to craft one single art item."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Customer ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Customer/get_single.php?Customer_Id=105",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Customer",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Customer_Id",
+									"value": "105"
+								}
+							]
+						},
+						"description": "Gets single customer specified by customer ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/manage_inventory/get_single.php?Username=Moiz",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"manage_inventory",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "Moiz"
+								}
+							]
+						},
+						"description": "Gets inventory of marerials purchased by a single admin specified by admin username."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/material/get_single.php?Mat_Id=48",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"material",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Mat_Id",
+									"value": "48"
+								}
+							]
+						},
+						"description": "Gets single material specified by material ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Orders/get_single.php?Order_Id=666",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Orders",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Order_Id",
+									"value": "666"
+								}
+							]
+						},
+						"description": "Gets single customer order speciied by order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Order Contains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Order_contains/get_single.php?Order_Id=666",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Order_contains",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Order_Id",
+									"value": "666"
+								}
+							]
+						},
+						"description": "Gets all materials ourchased in a single order specified by order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Review ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Review/get_single.php?Art_Id=8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Review",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Art_Id",
+									"value": "8"
+								}
+							]
+						},
+						"description": "Gets all customer reviews for a single art item specified by art item ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Shipment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shipment/get_single.php?Order_Id=666",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shipment",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Order_Id",
+									"value": "666"
+								}
+							]
+						},
+						"description": "Gets single shipment for a particular order specified by order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Shopping Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart/get_single.php?Customer_Id=105",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Customer_Id",
+									"value": "105"
+								}
+							]
+						},
+						"description": "Gets single shopping cart for a particular cusomrer specified by customer ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Shopping Cart Contains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart_contains/get_single.php?Customer_Id=104",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart_contains",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "Customer_Id",
+									"value": "104"
+								}
+							]
+						},
+						"description": "Gets all content of the shopping cart of a particular customer specified by customer ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Supply Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/supply_order/get_single.php?SO_Id=33",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"supply_order",
+								"get_single.php"
+							],
+							"query": [
+								{
+									"key": "SO_Id",
+									"value": "33"
+								}
+							]
+						},
+						"description": "Gets single supply order specified by supply order ID."
+					},
+					"response": []
+				}
+			],
+			"description": "All GET_SINGLE requests for each API endpoint in the ViVi Art Gallery DBMS. Each request returns a single tuple specified by the primary key of that particular relation,",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "377f02d5-3b02-4a20-a1fb-b6776241f911",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d08aa5da-25fa-43f1-8d80-15e55db9b521",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "POST Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Username\": \"Niyousha\",\r\n        \"Password\": \"2468\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Admin/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Admin",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post a new admin to the DBMS."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Admin Material Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"SO_Id\": \"11\",\r\n        \"Username\": \"Niyousha\",\r\n        \"Mat_Id\": \"69\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Admin_Material_Order/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Admin_Material_Order",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new admin supply order for a material."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Art Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Art_Id\": \"8\",\r\n        \"Art_name\": \"Nurse doll\",\r\n        \"Quantity\": \"10\",\r\n        \"Price\": \"30\",\r\n        \"Type_\": \"3\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_Item/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_Item",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new art item."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Art Item Made From",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Art_Id\": \"8\",\r\n        \"Mat_Id\": \"69\",\r\n        \"Mat_name\": \"Soft Balls\",\r\n        \"M_qty_each_item\": \"3\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item_made_from/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item_made_from",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post material in inventory that was used to craft an art item."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Customer_Id\": \"105\",\r\n        \"Name_\": \"Sara\",\r\n        \"Email_address\": \"sara123@gmail.com\",\r\n        \"Address\": \"105 Apple Ave SE\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Customer/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Customer",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new customer."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Manage Inventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Username\": \"Niyousha\",\r\n        \"Mat_Id\": \"69\",\r\n        \"Mat_name\": \"Soft balls\",\r\n        \"M_qty\": \"10\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/manage_inventory/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"manage_inventory",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new inventory item for an admin."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Material",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Mat_Id\": \"50\",\r\n        \"Mat_name\": \"Yarn\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/material/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"material",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new material."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Order_Id\": \"666\",\r\n        \"Customer_Id\": \"105\",\r\n        \"Final_cost\": \"30\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Orders/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Orders",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new customer order."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Order Contains",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Order_Id\": \"666\",\r\n        \"Art_Id\": \"8\",\r\n        \"Art_name\": \"Nurse doll\",\r\n        \"Art_qty\": \"1\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Order_contains/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Order_contains",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post new content of an existing order."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Art_Id\": \"8\",\r\n        \"Art_name\": \"Nurse doll\",\r\n        \"Customer_Id\": \"105\",\r\n        \"Cname\": \"Sara\",\r\n        \"Review\": \"So cute!\",\r\n        \"Date_\": \"December 10, 2020\",\r\n        \"Rating\": \"5\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Review/post.php?",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Review",
+								"post.php"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						},
+						"description": "Post customer review for an online purchase of an art item."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Shipment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Order_Id\": \"666\",\r\n        \"Status_\": \"Stroge\",\r\n        \"Scompany\": \"UPS\",\r\n        \"Ship_date\": \"Dec 11, 2020\",\r\n        \"Destination\": \"Calgary\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shipment/post.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shipment",
+								"post.php"
+							]
+						},
+						"description": "Post new shipment for customer order."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Shopping Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"Customer_Id\": \"105\",\r\n        \"Total_cost\": \"0\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart/post.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart",
+								"post.php"
+							]
+						},
+						"description": "Post new shopping cart for online shopper."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Shopping Cart Contains",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Customer_Id\": \"105\",\r\n        \"Art_Id\": \"8\",\r\n        \"Art_name\": \"Nurse doll\",\r\n        \"Art_qty\": \"1\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart_contains/post.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart_contains",
+								"post.php"
+							]
+						},
+						"description": "Post new art item to existing shopping cart of an online shopper."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Supply Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"SO_Id\": \"33\",\r\n        \"Supplier_name\": \"Michaels\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/supply_order/post.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"supply_order",
+								"post.php"
+							]
+						},
+						"description": "Post supply order of admin from supplier."
+					},
+					"response": []
+				}
+			],
+			"description": "All POST requests for each API endpoint in the ViVi Art Gallery DBMS. Each request adds a new tuple with a unique primary key.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ac39dfc3-f1ec-4da5-898d-285390ba814f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "194fa39e-b08c-405c-9121-adcbb6e990b1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "PUT Admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Username\": \"Niyousha\",\r\n        \"Password\": \"2467\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin",
+								"put.php"
+							]
+						},
+						"description": "Updates admin info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Admin Material Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"SO_Id\": \"11\",\r\n        \"Username\": \"Niyousha\",\r\n        \"Mat_Id\": \"48\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin_material_order/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin_material_order",
+								"put.php"
+							]
+						},
+						"description": "Updates admin material order info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Art Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Art_Id\": \"2\",\r\n        \"Art_name\": \"Ornament\",\r\n        \"Quantity\": \"5\",\r\n        \"Price\": \"35\",\r\n        \"Type_\": \"1\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item",
+								"put.php"
+							]
+						},
+						"description": "Updates art item info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Art Item Made From",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Art_Id\": \"5\",\r\n        \"Mat_Id\": \"233\",\r\n        \"Mat_name\": \"Sticks\",\r\n        \"M_qty_each_item\": \"10\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item_made_from/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item_made_from",
+								"put.php"
+							]
+						},
+						"description": "Updates info about what a particular art item is made from."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Customer_Id\": \"101\",\r\n        \"Name_\": \"Joey\",\r\n        \"Email_address\": \"joey@gmail.com\",\r\n        \"Address\": \"111 death street Gotham City\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Customer/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Customer",
+								"put.php"
+							]
+						},
+						"description": "Updates customer info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Manage Inventory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Username\": \"Niyousha\",\r\n        \"Mat_Id\": \"69\",\r\n        \"Mat_name\": \"Soft Balls\",\r\n        \"M_qty\": \"15\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/manage_inventory/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"manage_inventory",
+								"put.php"
+							]
+						},
+						"description": "Updates inventory of a particualr admin."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Material",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Mat_Id\": \"233\",\r\n        \"Mat_name\": \"Sticks\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/material/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"material",
+								"put.php"
+							]
+						},
+						"description": "Updates material info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Order_Id\": \"444\",\r\n        \"Customer_Id\": \"104\",\r\n        \"Final_cost\": \"10\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Orders/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Orders",
+								"put.php"
+							]
+						},
+						"description": "Updates order info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Order Contains",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Order_Id\": \"666\",\r\n        \"Art_Id\": \"8\",\r\n        \"Art_name\": \"Nurse doll\",\r\n        \"Art_qty\": \"2\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Order_contains/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Order_contains",
+								"put.php"
+							]
+						},
+						"description": "Uodates content info of a particular order."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Art_Id\": \"3\",\r\n        \"Art_name\": \"ring\",\r\n        \"Customer_Id\": \"101\",\r\n        \"Cname\": \"Joe\",\r\n        \"Review\": \"Great!\",\r\n        \"Date_\": \"June 22, 2020\",\r\n        \"Rating\": \"4\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Review/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Review",
+								"put.php"
+							]
+						},
+						"description": "Updates cutomer review info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Shipment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Order_Id\": \"666\",\r\n        \"Status_\": \"Delivered\",\r\n        \"Scompany\": \"UPS\",\r\n        \"Ship_date\": \"Dec 11, 2020\",\r\n        \"Destination\": \"Calgary\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shipment/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shipment",
+								"put.php"
+							]
+						},
+						"description": "Updates shipment info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Shopping Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Customer_Id\": \"105\",\r\n        \"Total_cost\": \"60\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart",
+								"put.php"
+							]
+						},
+						"description": "Updates an existing shopping cart info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Shopping Cart Contains",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Customer_Id\": \"105\",\r\n        \"Art_Id\": \"8\",\r\n        \"Art_name\": \"Nurse doll\",\r\n        \"Art_qty\": \"2\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart_contains/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart_contains",
+								"put.php"
+							]
+						},
+						"description": "Updates shopping cart content info."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Supply Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"SO_Id\": \"11\",\r\n        \"Supplier_name\": \"Canadian Tire\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/supply_order/put.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"supply_order",
+								"put.php"
+							]
+						},
+						"description": "Updates supply order info."
+					},
+					"response": []
+				}
+			],
+			"description": "All PUT requests for every relation in the ViVi Art Gallery DBMS. Each request updates a particular tuple.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ae3cb896-b01c-4fcd-8e57-2fe316c2b47e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed0c7a1d-1158-4b1f-af58-0e654e96cdb2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "DELETE Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"Username\": \"hashir\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin",
+								"delete.php"
+							]
+						},
+						"description": "Deletes admin specified by Username."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Admin Material Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"SO_Id\": \"22\",\r\n        \"Username\": \"moiz\",\r\n        \"Mat_Id\": \"233\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/admin_material_order/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"admin_material_order",
+								"delete.php"
+							]
+						},
+						"description": "Deletes admin material order specified by supply order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Art Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Art_Id\": \"2\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item",
+								"delete.php"
+							]
+						},
+						"description": "Deletes art item specified by art item ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Art Item Made From",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Art_Id\": \"5\",\r\n        \"Mat_Id\": \"233\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Art_item_made_from/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Art_item_made_from",
+								"delete.php"
+							]
+						},
+						"description": "Deletes material that was used to craft an art item, specified by art item ID and Material ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Customer_Id\": \"104\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Customer/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Customer",
+								"delete.php"
+							]
+						},
+						"description": "Deleted customer specified by customer ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Inventory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Username\": \"moiz\",\r\n        \"Mat_Id\": \"233\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/manage_inventory/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"manage_inventory",
+								"delete.php"
+							]
+						},
+						"description": "Deletes item from inventory of a particular admin, specified by admin username and material ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Material",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Mat_Id\": \"48\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/material/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"material",
+								"delete.php"
+							]
+						},
+						"description": "Deletes material specified by material ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Order_Id\": \"222\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Orders/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Orders",
+								"delete.php"
+							]
+						},
+						"description": "Deleted customer order specified by order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Order Contains",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Order_Id\": \"666\",\r\n        \"Art_Id\": \"8\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Order_contains/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Order_contains",
+								"delete.php"
+							]
+						},
+						"description": "Deleted an art item in an order specified by order ID and art item ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Art_Id\": \"3\",\r\n        \"Customer_Id\": \"101\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Review/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Review",
+								"delete.php"
+							]
+						},
+						"description": "Deletes customer review for an art item, specified by art item ID and customer ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Shipment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Order_Id\": \"111\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shipment/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shipment",
+								"delete.php"
+							]
+						},
+						"description": "Deletes shipment for an order specified by order ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Shopping Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"Customer_Id\": \"101\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart",
+								"delete.php"
+							]
+						},
+						"description": "Deletes shopping cart of a customer specified by customer ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE shopping Cart Contains",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Customer_Id\": \"101\",\r\n        \"Art_Id\": \"6\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/Shopping_cart_contains/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"Shopping_cart_contains",
+								"delete.php"
+							]
+						},
+						"description": "Deletes art item from the shopping cart of a particular customer specified by customer ID and art item ID."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Supply Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"SO_Id\": \"11\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://localhost/Online-Store-API/api/supply_order/delete.php",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Online-Store-API",
+								"api",
+								"supply_order",
+								"delete.php"
+							]
+						},
+						"description": "Deletes admin supply order specified by supply order ID."
+					},
+					"response": []
+				}
+			],
+			"description": "All DELETE requests for each API endpoint in the ViVi Art Gallery DBMS.",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
