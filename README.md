@@ -1,6 +1,6 @@
 # ViVi-Art-Gallery-DBMS
 
-## Final project for CPSC 471 - Data Base Management Systems at the University of Calgary
+## CPSC 471 - Data Base Management Systems
 
 
 Access to the ViVi Art Gallery database requires installation of XAMPP, Apache Server, and mySQL Server on the C: drive. After running the latter two servers on the XAMPP Control Panel, a new database must be imported on localhost/phpmyadmin which may be loaded on any browser. There are two options for which file to import to the new database:
